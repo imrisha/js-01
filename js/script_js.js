@@ -138,3 +138,94 @@ function getMathResult(b, n) {
 }
 
 console.log (getMathResult(5, 8));
+
+// Место для первой задачи
+function calculateVolumeAndArea(a) {
+    let s;
+    if (isNaN(a) || a <= 0 || !(Number.isInteger(a)))
+        s = "При вычислении произошла ошибка"  
+        else s = `Объем куба: ${a*a*a}, площадь всей поверхности: ${6*a*a}`;
+    console.log(s);
+    return s
+}
+
+// Место для второй задачи
+function getCoupeNumber(n) {
+     
+       if (isNaN(n) || n < 0 || !(Number.isInteger(n))) return "Ошибка. Проверьте правильность введенного номера места"  
+       if (n == 0 || n > 36)  return "Таких мест в вагоне не существует"  
+         else {
+                return Math.ceil(n/4)
+                
+            }
+            
+        }
+
+
+        function getTimeFromMinutes(minutesTotal) {
+            if (typeof(minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
+                return "Ошибка, проверьте данные";
+            }
+        
+            const hours = Math.floor(minutesTotal / 60);
+            const minutes = minutesTotal % 60;
+        
+            let hoursStr = '';
+        
+            switch (hours) {
+                case 0: 
+                    hoursStr = 'часов';
+                    break;
+                case 1:
+                    hoursStr = 'час';
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    hoursStr = 'часа';
+                    break;
+                default:
+                    hoursStr = 'часов';
+            }
+        
+            return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+        }
+        
+        getTimeFromMinutes(180)
+        
+        function findMaxNumber(a, b ,c, d) {
+            // Самое простое - это использовать Math.max :)
+            // А оптимизировать такую проверку мы научимся совсем скоро
+            if (typeof(a) !== 'number' ||
+                typeof(b) !== 'number' ||
+                typeof(c) !== 'number' ||
+                typeof(d) !== 'number') {
+                return 0;
+            } else {
+                return Math.max(a, b ,c, d);
+            }
+        }
+        
+        findMaxNumber(1, 5, 6.6, 10.5);
+        findMaxNumber(1, 5, '6', '10');
+
+        //////==================
+
+function fib(n) {
+    let s='',
+    a = 1,
+    b = 1, c;
+    
+    if (isNaN(n) || n <= 0 || !(Number.isInteger(n))) return s;
+    if (n==1) s = s + 1;
+    if (n>=2) s = '1 1';
+    for (let i = 2; i < n; i++){
+        
+        c = a + b;
+        s = s + ' ' + c;
+        a = b;  b = c;
+    }
+    return s;
+    
+}
+console.log(fib('kjkl'))        
